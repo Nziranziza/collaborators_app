@@ -65,6 +65,7 @@ componentWillUnmount(){
       </div>
       
       <div className="col-sm-9">
+      {Meteor.user() ? 
       <form >
      
     <div className="md-form">
@@ -100,7 +101,7 @@ componentWillUnmount(){
             <button type="submit" className="btn btn-primary btn-md" onClick={this.addJobPost.bind(this)}>Post</button>
         </div>
         </div>
-      </form>
+      </form>:<p>Want to post a job please <a>login</a></p>}
       <h4><small>RECENT POSTS</small></h4>
        <hr></hr>
         <div>{this.postings().map((posts)=>{ return <UserInfo publisher={posts.Jobdata.user

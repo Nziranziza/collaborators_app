@@ -52,7 +52,7 @@ export default class Recruit extends React.Component{
          <div className="card-body">
          <h4 className="card-title">Jennah Haque</h4>
          <p className="card-text">Jennah Haque is an architect and engineer</p>
-         <a href="/recruit/profile" className="btn btn-primary">See Profile</a>
+         <a href="/recruit/profile1" className="btn btn-primary">See Profile</a>
       </div>
     </div>
 
@@ -70,7 +70,7 @@ export default class Recruit extends React.Component{
          <div className="card-body">
          <h4 className="card-title">Wataru Doita</h4>
          <p className="card-text">Wataru Doita is an architect and engineer</p>
-         <a href="http://gsl.mit.edu/accounts/1757/" className="btn btn-primary">See Profile</a>
+         <a href="/recruit/profile2" className="btn btn-primary">See Profile</a>
       </div>
     </div>
 
@@ -79,7 +79,7 @@ export default class Recruit extends React.Component{
          <div className="card-body">
          <h4 className="card-title">Tosin Bosede</h4>
          <p className="card-text">Tosin Bosede is an architect and engineer</p>
-         <a href="http://gsl.mit.edu/accounts/1756/" className="btn btn-primary">See Profile</a>
+         <a href="/recruit/profile4" className="btn btn-primary">See Profile</a>
       </div>
     </div>
     <div className="card">

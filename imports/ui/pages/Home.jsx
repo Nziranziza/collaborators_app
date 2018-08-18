@@ -2,15 +2,14 @@ import React from 'react';
 import { Meteor } from 'meteor/meteor';
 import Homepage from '../pages/Homepage.jsx';
 import SignupLogin from '../pages/SignupLogin.jsx'
-import { Redirect } from 'react-router-dom';
 import TrackerReact from 'meteor/ultimatejs:tracker-react';
 //form function
-class Homeform extends React.Component {
+class Homeform extends TrackerReact(React.Component) {
   
   render(){
   
 return (   
-Meteor.loggingIn() ?  < Homepage />:
+Meteor.user() ?  < Homepage />:
 <div className="container">
 <div className="row content">
       <h1>Welcome to Our Platform</h1>
@@ -21,7 +20,7 @@ Meteor.loggingIn() ?  < Homepage />:
 <div className="col-sm-8">
 <p className="h4 text-center mb-4" style={{paddingBottom:'10px'}}>Potential Job seekers good for your Job</p>
 <div className="col-md-3 ins-vcard">
-<a href="/accounts/1792/">
+<a href="/recruit/profile1">
   <img className="img-circle" src="http://gsl.mit.edu/media/cache/90/37/90374362e74050b208565056391c9d80.jpg" width="150" height="150" />
   <p className="ins-fullname">Jennah Haque</p>
 </a>
@@ -29,7 +28,7 @@ Meteor.loggingIn() ?  < Homepage />:
   <p className="ins-affiliation">Massachusetts Institute of Technology</p>
 </div>
 <div className="col-md-3 ins-vcard">
-<a href="/accounts/1757/">
+<a href="/recruit/profile2">
   <img className="img-circle" src="http://gsl.mit.edu/media/cache/74/65/746529893daccdd9989e58ec6aa06a1a.jpg" width="150" height="150" />
   <p className="ins-fullname">Wataru Doita</p>
 </a>
@@ -37,7 +36,7 @@ Meteor.loggingIn() ?  < Homepage />:
   <p className="ins-affiliation">Massachusetts Institute of Technology</p>
 </div>
 <div className="col-md-3 ins-vcard">
-<a href="/accounts/1755/">
+<a href="/recruit/profile3">
   
   <img className="img-circle" src="http://gsl.mit.edu/media/cache/de/ac/deacf6c048530f2b57015729ff61ed04.jpg" width="150" height="150"/>
   <p className="ins-fullname">Kosi Aroh</p>
@@ -46,7 +45,7 @@ Meteor.loggingIn() ?  < Homepage />:
   <p className="ins-affiliation">Massachusetts Institute of Technology</p>
 </div>
 <div className="col-md-3 ins-vcard">
-<a href="/accounts/1756/"> 
+<a href="/recruit/profile4"> 
   <img className="img-circle" src="http://gsl.mit.edu/media/cache/0a/c5/0ac516d1c080e04c54df44b4dbf2a0ec.jpg" width="150" height="150"/>
   <p className="ins-fullname">Tosin Bosede</p>
 </a>
@@ -58,7 +57,7 @@ Meteor.loggingIn() ?  < Homepage />:
 <hr/>
 <p className="h4 text-center mb-4" style={{paddingBottom:'10px'}}>Look at the different jobs awaiting for you</p>
 <div className="col-md-3 ins-vcard">
-<a href="/accounts/1756/"> 
+<a href="/recruit/profile4"> 
   <img className="img-rounded" src="http://www.nirasfraenkel.com/~/media/Images/NIRAS-COM/jobs/Jobs-frontpage2-COM-550x210.ashx" width="150" height="150"/>
   <p className="ins-fullname">PositivoBGH Rwanda</p>
 </a>
@@ -100,7 +99,7 @@ Meteor.loggingIn() ?  < Homepage />:
   );
 }
 }
-export default class Home extends TrackerReact(React.Component){
+export default class Home extends React.Component{
   render(){
   return(
         <div>

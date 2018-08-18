@@ -1,9 +1,12 @@
 import React from 'react';
 import DashboardNav from './dashboard/DashboardNav.jsx';
 import SignupLogin from './SignupLogin.jsx';
-function Dashboard() {
+import TrackerReact from 'meteor/ultimatejs:tracker-react';
+
+export default class Dashboard extends TrackerReact(React.Component) {
+    render(){
     return (
-        Meteor.loggingIn() ?
+        Meteor.user() ?
         <div>
             <DashboardNav />
             <div id="page-wrapper">
@@ -192,4 +195,4 @@ function Dashboard() {
         </div>:<div className="container" style={{paddingLeft:'30%',paddingBottom:'100px',paddingTop:'50px'}}><SignupLogin /></div>
     );
 }
-export default Dashboard;
+}

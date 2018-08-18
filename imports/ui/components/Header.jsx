@@ -1,9 +1,11 @@
 import React from 'react';
 import AccountsUIWrapper from './AccountsUIWrapper.js';
+import { Meteor } from 'meteor/meteor';
+import TrackerReact from 'meteor/ultimatejs:tracker-react';
 
 
 
-export default class Header extends React.Component {
+export default class Header extends TrackerReact(React.Component) {
   render() {
     return (
       <header className='Header'>
@@ -16,7 +18,7 @@ export default class Header extends React.Component {
       <li><a href="/">Home</a></li>
       <li><a href="/recruit">Recruit</a></li>
       <li><a href="/post">Post</a></li>
-      { Meteor.loggingIn() ? <li><a href="/dashboard">Dashboard</a></li>:""}
+      { Meteor.user() ? <li><a href="/dashboard">Dashboard</a></li>:""}
       <li><a href="/about">About Us</a></li>
     </ul>
     <ul className="nav navbar-nav navbar-right">
