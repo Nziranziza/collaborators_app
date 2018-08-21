@@ -46,9 +46,9 @@ export default class Recruit extends React.Component{
         <p className="h4 text-center mb-4">We have a lot of workers you can recruit for your organisation and for part time job. 
           Browse through them or let do them matching to save your time</p>
       <div>
-
-      <div className="card">
-         <img className="card-img-top" src="http://gsl.mit.edu/media/cache/90/37/90374362e74050b208565056391c9d80.jpg" alt="Card image"  />
+      <div className="row">
+      <div className="col-sm-3" >
+         <img className="card-img-top img-fluid" src="http://gsl.mit.edu/media/cache/90/37/90374362e74050b208565056391c9d80.jpg" alt="Card image"  />
          <div className="card-body">
          <h4 className="card-title">Jennah Haque</h4>
          <p className="card-text">Jennah Haque is an architect and engineer</p>
@@ -56,8 +56,8 @@ export default class Recruit extends React.Component{
       </div>
     </div>
 
-    <div className="card">
-         <img className="card-img-top" src="http://gsl.mit.edu/media/cache/01/e6/01e6341b617cc5e083aaa5d25c3b145c.jpg" alt="Card image"  />
+    <div className="col-sm-3">
+         <img className="card-img-top img-fluid" src="http://gsl.mit.edu/media/cache/01/e6/01e6341b617cc5e083aaa5d25c3b145c.jpg" alt="Card image"  />
          <div className="card-body">
          <h4 className="card-title">Schadrack</h4>
          <p className="card-text">Ngirimana Schadrack is an architect </p>
@@ -65,8 +65,8 @@ export default class Recruit extends React.Component{
       </div>
     </div>
 
-    <div className="card">
-         <img className="card-img-top" src="http://gsl.mit.edu/media/cache/74/65/746529893daccdd9989e58ec6aa06a1a.jpg" alt="Card image"  />
+    <div className="col-sm-3" >
+         <img className="card-img-top img-fluid" src="http://gsl.mit.edu/media/cache/74/65/746529893daccdd9989e58ec6aa06a1a.jpg" alt="Card image"  />
          <div className="card-body">
          <h4 className="card-title">Wataru Doita</h4>
          <p className="card-text">Wataru Doita is an architect and engineer</p>
@@ -74,13 +74,14 @@ export default class Recruit extends React.Component{
       </div>
     </div>
 
-    <div className="card">
-         <img className="card-img-top" src="http://gsl.mit.edu/media/cache/0a/c5/0ac516d1c080e04c54df44b4dbf2a0ec.jpg" alt="Card image"  />
+    <div className="col-sm-3" >
+         <img className="card-img-top img-fluid" src="http://gsl.mit.edu/media/cache/0a/c5/0ac516d1c080e04c54df44b4dbf2a0ec.jpg" alt="Card image"  />
          <div className="card-body">
          <h4 className="card-title">Tosin Bosede</h4>
          <p className="card-text">Tosin Bosede is an architect and engineer</p>
          <a href="/recruit/profile4" className="btn btn-primary">See Profile</a>
       </div>
+    </div>
     </div>
     <div className="card">
          <img className="card-img-top" src="http://gsl.mit.edu/media/cache/bf/df/bfdf935af023fa8981dd86ef67dccbb6.jpg" alt="Card image"  />

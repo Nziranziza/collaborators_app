@@ -3,7 +3,7 @@ export default class Homepage extends React.Component{
     render(){
         return(
             <div>
-                <img  src="coll.jpg" alt="header" />
+                <img  src="header_bg.jpg" alt="header" style={{width:'100%'}}/>
             <div className='preloader'><div className='loaded'>&nbsp;</div></div>
 
         <header id="home" className="home" Style={{paddingBottom:'30px'}}>
@@ -34,8 +34,8 @@ export default class Homepage extends React.Component{
                     <div className="wrapper">
                         <div className="col-md-3 col-sm-6 col-xs-12">
                             <div className="service-item text-center">
-                                <i className="fa fa-pencil"></i>
-                                <h5>Employee Recruitment</h5>
+                                <i className="fa fa-pencil"><img src="recruit.png" width="150" height="150"/></i>
+                                <h5><b>Employee Recruitment</b></h5>
                                 <div className="separator2"></div>
                                 <p>We Job recruiters hire the workers with our fast omatching system.</p>
                             </div>
@@ -43,8 +43,8 @@ export default class Homepage extends React.Component{
 
                         <div className="col-md-3 col-sm-6 col-xs-12">
                             <div className="service-item text-center">
-                                <i className="fa fa-camera-retro"></i>
-                                <h5>Job Posting</h5>
+                                <i className="fa fa-camera-retro"><img src="post-it.png" width="150" height="150"/></i>
+                                <h5><b>Job Posting</b></h5>
                                 <div className="separator2"></div>
                                 <p>Here you can post an announcement for your job and we give the employees within a few minutes</p>
                             </div>
@@ -52,8 +52,8 @@ export default class Homepage extends React.Component{
 
                         <div className="col-md-3 col-sm-6 col-xs-12">
                             <div className="service-item text-center">
-                                <i className="fa fa-lightbulb-o"></i>
-                                <h5>Career Guidance</h5>
+                                <i className="fa fa-lightbulb-o"><img src="career.png" width="150" height="150"/></i>
+                                <h5><b>Career Guidance</b></h5>
                                 <div className="separator2"></div>
                                 <p>We help people build their career by providing all the information that is specific to them</p>
                             </div>
@@ -61,8 +61,8 @@ export default class Homepage extends React.Component{
 
                         <div className="col-md-3 col-sm-6 col-xs-12">
                             <div className="service-item text-center">
-                                <i className="fa fa-lock"></i>
-                                <h5>Skills and Job Knowledge Development</h5>
+                                <i className="fa fa-lock"><img src="training.png" width="150" height="150"/></i>
+                                <h5><b>Skills and experience Development</b></h5>
                                 <div className="separator2"></div>
                                 <p>With our platform you will have to attend different trainings and online learning that will enhance your experience to the work</p>
                             </div>

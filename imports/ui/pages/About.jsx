@@ -8,24 +8,26 @@ function About() {
     <div className="row">
     <div className="col-sm-4">
          <p className="h2 text-center mb-4" style={{paddingBottom:'10px'}}>Description</p>
-         <p> Collaborator is a platform create to help employees and employers.
-          We offer our users a free online resources to improve their knowledge about
-          their career.We have different companies we work with and we offer you a job to join those companies.
+         <p> Collaborator is a platform created to help employees and employers.
+          We offer a free online resources to our users to improve their knowledge about
+          their career.We also provide in person trainig and this helps in gaining the experience.We have different companies we work with and we offer you a job to join those companies.
           We help the recruiters as well to get the workers get the workers that meet their criteria.</p>
     </div>
     <div className="col-sm-4">
           <p className="h2 text-center mb-4" style={{paddingBottom:'10px'}}>Mission</p>
-          <p>Collaborator is a platform create to help employees and employers.
-          We offer our users a free online resources to improve their knowledge about
-          their career.We have different companies we work with and we offer you a job to join those companies.
-          We help the recruiters as well to get the workers get the workers that meet their criteria.</p>
+          <p>
+              <ul>
+                  <li>To provide jobs to all jobseekers in an easy way</li>
+                  <li>To provide resources to help job seekers build their portfolio</li>
+                  <li>To offer highly qualified,trusthworthy employees to the recruiters</li>
+                  <li>To minimize the cost and time of getting a new employee</li>
+                  <li>To minimize the cost of getting a job</li>
+              </ul>
+          </p>
     </div>
     <div className="col-sm-4">
          <p className="h2 text-center mb-4" style={{paddingBottom:'10px'}}>Vision</p>
-         <p>Collaborator is a platform create to help employees and employers.
-          We offer our users a free online resources to improve their knowledge about
-          their career.We have different companies we work with and we offer you a job to join those companies.
-          We help the recruiters as well to get the workers get the workers that meet their criteria.</p>
+         <p>To be the first leading company that provide highly qualified,trusthworthy employees in Rwanda and East Africa</p>
     </div>
   </div>
   <div className="row">

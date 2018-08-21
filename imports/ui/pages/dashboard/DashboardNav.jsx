@@ -5,7 +5,7 @@ function DashboardNav(){
         <nav className="navbar navbar-default " role="navigation" style={{ marginBottom: 0 }}>
 
                 <div className="navbar-header">
-                    <button type="button" className="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                    <button type="button" className="navbar-toggle" data-toggle="collapse" data-target="#dash-nav">
                         <span className="sr-only">Toggle navigation</span>
                         <span className="icon-bar"></span>
                         <span className="icon-bar"></span>
@@ -138,7 +138,7 @@ function DashboardNav(){
                 </ul>
      {/*side bar panel start from here*/}
                 <div className="navbar-default sidebar" role="navigation">
-                    <div className="sidebar-nav navbar-collapse">
+                    <div className="sidebar-nav navbar-collapse" id="dash-nav">
 
                         <ul className="nav" id="side-menu">
                             <li className="sidebar-search">

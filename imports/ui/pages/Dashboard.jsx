@@ -2,11 +2,57 @@ import React from 'react';
 import DashboardNav from './dashboard/DashboardNav.jsx';
 import SignupLogin from './SignupLogin.jsx';
 import TrackerReact from 'meteor/ultimatejs:tracker-react';
+import {Biography} from '../../api/tasks.js';
+
+class DisplayBiography extends React.Component{
+    render(){
+        return(
+            <div>
+                <p>{this.props.text}</p>
+            </div>
+
+        );
+    }
+}
 
 export default class Dashboard extends TrackerReact(React.Component) {
+   constructor(){
+       super();
+       this.state={
+           bio:false,
+           subscription:{
+            Biography: Meteor.subscribe("biography")
+          }
+       }
+   }
+   componentWillUnmount(){
+    this.state.subscription.biography.stop();
+  }
+  Biography(){
+    return Biography.find().fetch();
+}
+   addBiography(){
+       this.setState({
+           bio:true,
+       })
+   }
+   saveBiography(e){
+       e.preventDefault();
+       var text=this.refs.bio.value;
+       Meteor.call('addBiography',text);
+       alert("The data saved successful");
+       this.setState({
+           bio:false
+       })
+   }
+   checkBio(){
+       var biography= Biography.find().fetch().map((Info)=> {return Info});
+       return(biography ? true:false)
+        
+   }
     render(){
     return (
-        Meteor.user() ?
+        Meteor.userId() ?
         <div>
             <DashboardNav />
             <div id="page-wrapper">
@@ -111,7 +157,7 @@ export default class Dashboard extends TrackerReact(React.Component) {
     {/*Area chat starts from here*/}                    
                             <div className="panel panel-default">
                                 <div className="panel-heading">
-                                    <i className="fa fa-bar-chart-o fa-fw"></i> Personal information
+                                    <i className="fa fa-bar-chart-o fa-fw"></i> Biography
                             <div className="pull-right">
                                         <div className="btn-group">
                                             <button type="button" className="btn btn-default btn-xs dropdown-toggle" data-toggle="dropdown">
@@ -133,7 +179,17 @@ export default class Dashboard extends TrackerReact(React.Component) {
                                     </div>
                                 </div>
                                 <div className="panel-body">
-                                    <div id="morris-area-chart"></div>
+                                    <p><small>This section helps the recruiters to know more about you please describe yourself as the best as you can. Completing this section will increase your ratings and hence affecting your chances to get a job.</small></p>
+                                    <div id="morris-area-chart">
+                                    <button type="button" className="btn btn-raised btn-primary" onClick={this.addBiography.bind(this)}>{this.checkBio()?'Edit':'Add Bio'}</button>
+                                    {this.state.bio ? <div> <div class="form-group">
+                                                               <label for="exampleTextarea" className="bmd-label-floating">Write your biography here</label>
+                                                               <textarea className="form-control" ref='bio' rows="5"></textarea>
+                                                            </div>
+                                                            <button type="button" className="btn btn-raised btn-primary" onClick={this.saveBiography.bind(this)}>Save</button>
+                                                      </div>:
+                                                      <div>{this.Biography().map((info)=>{return <DisplayBiography text={info.biotext} key={info._id}/>})}</div>}
+                                    </div>
                                 </div>
 
                             </div>

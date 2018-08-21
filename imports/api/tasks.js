@@ -5,6 +5,8 @@ export const Personalinfo= new Mongo.Collection('personinfo');
 export const Familyinfo=new Mongo.Collection('familyinfo');
 export const Contactinfo=new Mongo.Collection('contactinfo');
 export const Educationinfo=new Mongo.Collection('educationinfo');
+export const Biography=new Mongo.Collection('biography');
+export const Languages=new Mongo.Collection('languages');
 //Publishing the collection
 if (Meteor.isServer) {
     // This code only runs on the server
@@ -26,6 +28,13 @@ Meteor.publish('contactInfo', function contactInfoPublication() {
 Meteor.publish('educationInfo', function educactionInfoPublication() {
     return Educationinfo.find({id: this.userId});
   });
+
+Meteor.publish('biography',function biographyPublication(){
+    return Biography.find({id:this.userId});
+});
+Meteor.publish('languages',function languegesPublication(){
+    return Languages.find({id:this.userId});
+})
 }
 
 //adding methods to handle insecure 
@@ -220,6 +229,21 @@ Meteor.methods({
             }
         })
     },
+//Adding Biography
+addBiography(text){
+    Biography.insert({
+        biotext:text,
+        id:Meteor.userId()
+    })
+},
+//Add language
+addLanguage(lang,level){
+    Languages.insert({
+        lang:lang,
+        level:level,
+        id:Meteor.userId()
+    })
+}
 
 
 });

@@ -9,7 +9,7 @@ class Homeform extends TrackerReact(React.Component) {
   render(){
   
 return (   
-Meteor.user() ?  < Homepage />:
+Meteor.userId() ?  < Homepage />:
 <div className="container">
 <div className="row content">
       <h1>Welcome to Our Platform</h1>

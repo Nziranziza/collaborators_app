@@ -65,7 +65,7 @@ componentWillUnmount(){
       </div>
       
       <div className="col-sm-9">
-      {Meteor.user() ? 
+      {Meteor.userId() ? 
       <form >
      
     <div className="md-form">
