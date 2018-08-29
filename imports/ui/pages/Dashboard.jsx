@@ -76,7 +76,7 @@ export default class Dashboard extends TrackerReact(React.Component) {
                                         </div>
                                     </div>
                                 </div>
-                                <a href="#">
+                                <a href="dashboard/rankings">
                                     <div className="panel-footer">
                                         <span className="pull-left">View Details</span>
                                         <span className="pull-right"><i className="fa fa-arrow-circle-right"></i></span>
@@ -98,7 +98,7 @@ export default class Dashboard extends TrackerReact(React.Component) {
                                         </div>
                                     </div>
                                 </div>
-                                <a href="#">
+                                <a href="/dashboard/available">
                                     <div className="panel-footer">
                                         <span className="pull-left">View Details</span>
                                         <span className="pull-right"><i className="fa fa-arrow-circle-right"></i></span>
@@ -120,7 +120,7 @@ export default class Dashboard extends TrackerReact(React.Component) {
                                         </div>
                                     </div>
                                 </div>
-                                <a href="#">
+                                <a href="dashboard/lessons">
                                     <div className="panel-footer">
                                         <span className="pull-left">View Details</span>
                                         <span className="pull-right"><i className="fa fa-arrow-circle-right"></i></span>
@@ -142,7 +142,7 @@ export default class Dashboard extends TrackerReact(React.Component) {
                                         </div>
                                     </div>
                                 </div>
-                                <a href="#">
+                                <a href="dashboard/trainings">
                                     <div className="panel-footer">
                                         <span className="pull-left">View Details</span>
                                         <span className="pull-right"><i className="fa fa-arrow-circle-right"></i></span>

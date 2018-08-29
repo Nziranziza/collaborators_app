@@ -10,8 +10,17 @@ class Language extends React.Component{
                                           <th scope="row"></th>
                                           <td>{this.props.lang}</td>
                                           <td>{this.props.level}</td>
-                  </tr>  
-           
+                  </tr>            
+              )
+    }
+}
+
+class NativeLang extends React.Component{
+    render(){
+        return(
+            <div>
+                   <h4>{this.props.native}</h4>
+            </div>
         )
     }
 }
@@ -21,13 +30,14 @@ export default class  LanguageDetails extends TrackerReact(React.Component){
         this.state={
             addlang:false,
             subscription:{
-                Languages: Meteor.subscribe("languages")
-            }
+                Languages: Meteor.subscribe("languages"),
+            },
+            native:false,
         }
     }
 
     componentWillUnmount(){
-        this.state.subscription.Languages.stop();
+        this.state.subscription.Languages.stop();     
       }
 
     addLanguage(e){
@@ -35,6 +45,18 @@ export default class  LanguageDetails extends TrackerReact(React.Component){
         this.setState({
             addlang:true
         })   
+    }
+    addNativeLang(e){
+      e.preventDefault();
+      this.setState({
+          native:true
+      })
+    }
+    saveNativeLang(e){
+        e.preventDefault();
+        var native=this.refs.native.value.trim();
+        Meteor.call('addNative',native);
+        alert('Data added successful!!!');
     }
     saveLanguage(e){
         e.preventDefault();
@@ -55,6 +77,9 @@ export default class  LanguageDetails extends TrackerReact(React.Component){
 
     languages(){
         return Languages.find().fetch();
+    }
+    nativelang(){
+        return Languages.find({native:true}).fetch();
     }
     render(){
     return(<div>
@@ -86,7 +111,16 @@ export default class  LanguageDetails extends TrackerReact(React.Component){
                                 </div>
 
                                 <div className="panel-body">
-                                
+                                <p className="h3 text-center mb-4" style={{paddingBottom:'10px'}}>Native Language</p>
+                                <button type="button" className="btn btn-raised btn-primary" onClick={this.addNativeLang.bind(this)} >Add</button>
+                                {this.state.native? <form className="form-inline" onSubmit={this.saveNativeLang.bind(this)}>
+                                    <div className="form-group" style={{paddingRight:'10px'}}>
+                                    <input type="name" className="form-control" ref="native" placeholder="Language"  />
+                                    </div>
+                                   <button type="submit" className="btn btn-raised btn-primary" >Save</button>
+                                   </form> :''}
+                                   {this.nativelang().map((info)=>{ return <NativeLang native={info.nativeLang}  key={info._id}/>})}
+                                <p className="h3 text-center mb-4" style={{paddingBottom:'10px'}}>Other Languages</p>
                                 {this.state.addlang? <button type="button" className="btn btn-raised btn-primary" onClick={this.cancel.bind(this)}>cancel</button>:<button type="button" className="btn btn-raised btn-primary" onClick={this.addLanguage.bind(this)}>Add </button>}
                                 {this.state.addlang ? <form className="form-inline" onSubmit={this.saveLanguage.bind(this)}>
                                     <div className="form-group" style={{paddingRight:'10px'}}>

@@ -34,8 +34,9 @@ Meteor.publish('biography',function biographyPublication(){
 });
 Meteor.publish('languages',function languegesPublication(){
     return Languages.find({id:this.userId});
-})
-}
+});
+
+}  
 
 //adding methods to handle insecure 
 Meteor.methods({
@@ -241,10 +242,19 @@ addLanguage(lang,level){
     Languages.insert({
         lang:lang,
         level:level,
+        native:false,
         id:Meteor.userId()
     })
-}
+},
+//Add Native Language
+addNative(native){
+    Languages.insert({
+        native:true,
+        nativeLang:native,
+        id:Meteor.userId()
 
+    })
+}
 
 });
 

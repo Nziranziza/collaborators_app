@@ -200,6 +200,8 @@ export default class Recruit extends React.Component{
          <a href="/recruit/profile" className="btn btn-primary">See Profile</a>
       </div>
     </div>
+
+    
     </div>:""}
     <button type="button" className="btn btn-raised btn-info">4 Years Experience</button>
     <button type="button" className="btn btn-raised btn-info">3 Years Experience</button>

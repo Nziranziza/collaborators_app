@@ -112,36 +112,36 @@ export default class Homepage extends React.Component{
                         <div className="brand-item">
                             <div className="col-md-2 col-sm-2 col-xs-12">
                                 <div className="brand-identity">
-                                    <img src="https://www.hexakomb.com/assets/client_logos/hexakomb.jpg" alt="brand" style={{width:'120px',height:'100px'}} />
+                                    <img src="facebook.png" alt="brand" style={{width:'120px',height:'120px'}} />
                                 </div>
                             </div>
 
                             <div className="col-md-2 col-sm-2 col-xs-12">
                                 <div className="brand-identity">
-                                    <img src="https://lh3.googleusercontent.com/ZZPdzvlpK9r_Df9C3M7j1rNRi7hhHRvPhlklJ3lfi5jk86Jd1s0Y5wcQ1QgbVaAP5Q=s180-rw" alt="brand" style={{width:'120px',height:'100px'}} />
+                                    <img src="facebook.jpg" alt="brand" style={{width:'120px',height:'100px'}} />
                                 </div>
                             </div>
 
                             <div className="brand-item col-md-2 col-sm-2 col-xs-12">
                                 <div className="brand-identity">
-                                    <img src="https://cdn.wccftech.com/wp-content/uploads/2018/02/Google-740x325.jpg" alt="brand"  style={{width:'120px',height:'100px'}}/>
+                                    <img src="google.png" alt="brand"  style={{width:'120px',height:'100px'}}/>
                                 </div>
                             </div>
                             <div className="col-md-2 col-sm-2 col-xs-12">
                                 <div className="brand-identity">
-                                    <img src="https://www.hexakomb.com/assets/client_logos/hexakomb.jpg" alt="brand" style={{width:'120px',height:'100px'}} />
+                                    <img src="hexakomb.jpg" alt="brand" style={{width:'120px',height:'100px'}} />
                                 </div>
                             </div>
 
                             <div className="col-md-2 col-sm-2 col-xs-12">
                                 <div className="brand-identity">
-                                    <img src="https://lh3.googleusercontent.com/ZZPdzvlpK9r_Df9C3M7j1rNRi7hhHRvPhlklJ3lfi5jk86Jd1s0Y5wcQ1QgbVaAP5Q=s180-rw" alt="brand" style={{width:'120px',height:'100px'}} />
+                                    <img src="facebook.jpg" alt="brand" style={{width:'120px',height:'100px'}} />
                                 </div>
                             </div>
 
                             <div className="brand-item col-md-2 col-sm-2 col-xs-12">
                                 <div className="brand-identity">
-                                    <img src="https://cdn.wccftech.com/wp-content/uploads/2018/02/Google-740x325.jpg" alt="brand"  style={{width:'120px',height:'100px'}}/>
+                                    <img src="google.png" alt="brand"  style={{width:'120px',height:'100px'}}/>
                                 </div>
                             </div>
                            

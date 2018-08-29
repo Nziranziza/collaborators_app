@@ -12,9 +12,17 @@ constructor(){
   super();
   this.state={subscription:{
     postings: Meteor.subscribe("userdata")
-  }
+  },
+  loginDrop:true
 
   }
+}
+alreadyHaveAccount(e){
+  e.preventDefault();
+this.setState({
+      loginDrop:!this.state.loginDrop
+  })
+  Session.set('Meteor.loginButtons.dropdownVisible',this.state.loginDrop);
 }
 componentWillUnmount(){
   this.state.subscription.postings.stop();
@@ -63,14 +71,16 @@ componentWillUnmount(){
   
         <br></br>  
       </div>
-      
-      <div className="col-sm-9">
-      {Meteor.userId() ? 
-      <form >
      
+      <div className="col-sm-9">
+      <div className="col-sm-8">
+      <div><p style={{paddingTop:'20px'}}><small><b>This page is where you describe the employee you want. Please make sure you do it correctly,we have used select option to make it easy for you.Once you finish the selection go on and describe in details in the text area.This will help people to understand whom you want once you job is posted.Once you are done you wait for the system to do the matching for you.Note that our matching sytem try to find the best matches and we try to make it more accurate</b></small> </p></div>
+      {Meteor.userId() ? 
+    <div className="jumbotron">
+      <form >
     <div className="md-form">
-    <input type="text" id="form1" className="form-control" ref="title" />
     <label for="form1" >Job Title</label>
+    <input type="text" id="form1" className="form-control" ref="title" />
     </div>
     <label for="sel1">Choose post:</label>
       <select className="form-control" id="sel1">
@@ -101,7 +111,7 @@ componentWillUnmount(){
             <button type="submit" className="btn btn-primary btn-md" onClick={this.addJobPost.bind(this)}>Post</button>
         </div>
         </div>
-      </form>:<p>Want to post a job please <a>login</a></p>}
+      </form></div>:<p>Want to post a job please <a onClick={this.alreadyHaveAccount.bind(this)}>login</a></p>}
       <h4><small>RECENT POSTS</small></h4>
        <hr></hr>
         <div>{this.postings().map((posts)=>{ return <UserInfo publisher={posts.Jobdata.user
@@ -147,6 +157,7 @@ componentWillUnmount(){
             </div>
           </div>
         </div>
+      </div>
       </div>
     </div>
 

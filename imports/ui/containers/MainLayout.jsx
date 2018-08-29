@@ -20,6 +20,10 @@ import Academic from '../pages/dashboard/Academic.jsx';
 import SocialActivities from '../pages/dashboard/SocialActivities.jsx';
 import EducationInfo from '../pages/dashboard/EducationInfo.jsx';
 import FamilyInfo from '../pages/dashboard/FamilyInfo.jsx';
+import Rankings from '../pages/dashboard/Rankings.jsx';
+import Trainings from '../pages/dashboard/Trainings.jsx';
+import Lessons from '../pages/dashboard/Lessons.jsx';
+import Available from '../pages/dashboard/Available.jsx';
 import Profile1 from '../pages/Profile1.jsx';
 import Profile2 from '../pages/Profile2.jsx';
 import Profile3 from '../pages/Profile3.jsx';
@@ -51,6 +55,10 @@ export default class MainLayout extends React.Component {
               <Route exact path = '/dashboard/languagedetails' component={LanguageDetails} />
               <Route exact path = '/dashboard/workexperience' component={WorkExperience} />
               <Route exact path = '/dashboard/academic' component={Academic} />
+              <Route exact path = '/dashboard/rankings' component={Rankings} />
+              <Route exact path = '/dashboard/available' component={Available} />
+              <Route exact path = '/dashboard/lessons' component={Lessons} />
+              <Route exact path = '/dashboard/trainings' component={Trainings} />
               <Route exact path = '/dashboard/socialactivities' component={SocialActivities} />
               <Route component={NotFound} />
             </Switch>
