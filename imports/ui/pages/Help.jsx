@@ -13,7 +13,7 @@ function Help() {
                
                 <div className="row">
                     <div className="wrapper">
-                    <h3>Job seekers</h3>
+                    <h3><b>Job seekers</b></h3>
                         <div className="col-md-3 col-sm-6 col-xs-12">
                             <div className="service-item text-center">
                                 <i className="fa fa-pencil"><img src="membership.png" width="150" height="150"/></i>
@@ -52,7 +52,7 @@ function Help() {
                         <div className="col-md-3 col-sm-6 col-xs-12">
                             <div className="service-item text-center">
                                 <i className="fa fa-lock"><img src="post-it.png" width="150" height="150"/></i>
-                                <h5><b>Get posted</b></h5>
+                                <h5><b>5.Get posted</b></h5>
                                 <div className="separator2"></div>
                                 <p>Now you will be posted in recruit page</p>
                             </div>
@@ -60,7 +60,7 @@ function Help() {
                         <div className="col-md-3 col-sm-6 col-xs-12">
                             <div className="service-item text-center">
                                 <i className="fa fa-lock"><img src="recruit.png" width="150" height="150"/></i>
-                                <h5><b>Be hired</b></h5>
+                                <h5><b>6.Be hired</b></h5>
                                 <div className="separator2"></div>
                                 <p>Potential employers will be able to recruit you via our platform</p>
                             </div>
@@ -71,7 +71,7 @@ function Help() {
             </div>      
         </section>
         <hr/>
-                        <h3>Employers</h3>
+                        <h3><b>Employers</b></h3>
                         <div className="col-md-3 col-sm-6 col-xs-12">
                             <div className="service-item text-center">
                                 <i className="fa fa-lock"><img src="view.png" width="150" height="150"/></i>
