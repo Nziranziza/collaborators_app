@@ -13,6 +13,7 @@ function Help() {
                
                 <div className="row">
                     <div className="wrapper">
+                    <h3>Job seekers</h3>
                         <div className="col-md-3 col-sm-6 col-xs-12">
                             <div className="service-item text-center">
                                 <i className="fa fa-pencil"><img src="membership.png" width="150" height="150"/></i>
@@ -63,7 +64,33 @@ function Help() {
                                 <div className="separator2"></div>
                                 <p>Potential employers will be able to recruit you via our platform</p>
                             </div>
-                        </div>   
+                        </div>
+                        <hr/>
+                        <h3>Employers</h3>
+                        <div className="col-md-3 col-sm-6 col-xs-12">
+                            <div className="service-item text-center">
+                                <i className="fa fa-lock"><img src="view.png" width="150" height="150"/></i>
+                                <h5><b>1.View profile</b></h5>
+                                <div className="separator2"></div>
+                                <p>Access the recruit page and view profiles of job seekers</p>
+                            </div>
+                        </div>
+                        <div className="col-md-3 col-sm-6 col-xs-12">
+                            <div className="service-item text-center">
+                                <i className="fa fa-lock"><img src="recruit.png" width="150" height="150"/></i>
+                                <h5><b>2.Hire</b></h5>
+                                <div className="separator2"></div>
+                                <p>Hire if you like</p>
+                            </div>
+                        </div>
+                        <div className="col-md-3 col-sm-6 col-xs-12">
+                            <div className="service-item text-center">
+                                <i className="fa fa-lock"><img src="desc.png" width="150" height="150"/></i>
+                                <h5><b>Describe</b></h5>
+                                <div className="separator2"></div>
+                                <p>You can also describe the person you want and the system assign the best match</p>
+                            </div>
+                        </div>    
 
                     </div>
                 </div>
