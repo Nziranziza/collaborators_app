@@ -65,7 +65,12 @@ function Help() {
                                 <p>Potential employers will be able to recruit you via our platform</p>
                             </div>
                         </div>
-                        <hr/>
+
+                    </div>
+                </div>
+            </div>      
+        </section>
+        <hr/>
                         <h3>Employers</h3>
                         <div className="col-md-3 col-sm-6 col-xs-12">
                             <div className="service-item text-center">
@@ -91,11 +96,6 @@ function Help() {
                                 <p>You can also describe the person you want and the system assign the best match</p>
                             </div>
                         </div>    
-
-                    </div>
-                </div>
-            </div>      
-        </section>
    
    </div>
   )
