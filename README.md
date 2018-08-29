@@ -1,4 +1,4 @@
-# meteor-react-boilerplate
+# Collaborators-Employee recruitment & Job seeking platform
 A starter project for React &amp; Meteor
 
 This repo aims to get you up and running with with React with little effort. It has sane defaults that
