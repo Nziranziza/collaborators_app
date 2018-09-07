@@ -166,9 +166,9 @@ class HandleEducationInfo extends React.Component{
 
 
     render(){
-    return(<form onSubmit={this.addEducationInfo.bind(this)}>
+    return(<form onSubmit={this.addEducationInfo.bind(this)} >
                 <h4>Middle school Information</h4>
-                <div className="form-inline" >
+                <div className="form-inline" > 
                  <div className="form-group" style={{paddingRight:'10px'}}>
                  <input type="name" className="form-control" ref="mcountry" placeholder="Country"  />
                 </div>
@@ -295,7 +295,7 @@ export default class EducationInfo extends TrackerReact(React.Component) {
         <div id="page-wrapper">
                 <div className="row">
                     <div className="col-lg-12">
-                        <h1 className="page-header">Education Information<button className="btn blue-gradient btn-rounded" type="button" onClick={this.enableEditEducationInfo.bind(this)} style={{marginLeft:"530px"}}>{buttonName}</button></h1>
+                        <h1 className="page-header">Education Information<button className="btn blue-gradient btn-rounded" type="button" onClick={this.enableEditEducationInfo.bind(this)} style={{float:'right'}}>{buttonName}</button></h1>
                     </div>
                 </div>
               { this.state.edit ? <HandleEducationInfo/>:

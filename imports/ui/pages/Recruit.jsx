@@ -1,4 +1,6 @@
 import React from 'react';
+import TrackerReact from 'meteor/ultimatejs:tracker-react';
+import { Meteor } from 'meteor/meteor';
 
 function PersonImage(props){
   return(
@@ -19,12 +21,15 @@ function PersonImage(props){
   );
 }
 
-export default class Recruit extends React.Component{
+export default class Recruit extends TrackerReact(React.Component){
   constructor(){
     super();
     this.state={
       show:false,
-      showe:false
+      showe:false,
+      subscription:{
+        users:Meteor.subscribe('users'),
+      }
     }
   }
   changeShow(e){

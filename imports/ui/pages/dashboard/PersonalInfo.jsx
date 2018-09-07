@@ -119,7 +119,7 @@ export default class PersonalInfo extends TrackerReact(React.Component){
               <div id="page-wrapper">
                 <div className="row">
                     <div className="col-lg-12">
-                        <h1 className="page-header">Personal Information<button className="btn blue-gradient btn-rounded" type="button" onClick={this.enableEditPersonalInfo.bind(this)} style={{marginLeft:"548px"}}>{buttonName}</button></h1>
+                        <h1 className="page-header">Personal Information<button className="btn blue-gradient btn-rounded" type="button" onClick={this.enableEditPersonalInfo.bind(this)} style={{float:'right'}}>{buttonName}</button></h1>
                     </div>
               
                   </div>

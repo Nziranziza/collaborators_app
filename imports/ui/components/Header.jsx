@@ -6,6 +6,20 @@ import TrackerReact from 'meteor/ultimatejs:tracker-react';
 
 
 export default class Header extends TrackerReact(React.Component) {
+  constructor(){
+    super();
+    this.state={
+      lang:true,
+    }
+  }
+
+  changeLang(e){
+    e.preventDefault();
+    this.setState({
+      lang:!this.state.lang
+    })
+    console.log(this.state.lang)
+  }
   render() {
     return (
       <header className='Header'>
@@ -22,16 +36,16 @@ export default class Header extends TrackerReact(React.Component) {
         </div>
     <div className="collapse navbar-collapse" id="navbar-collapse-1">
     <ul className="nav navbar-nav " >
-      <li><a href="/">Home</a></li>
-      <li><a href="/recruit">Recruit</a></li>
-      <li><a href="/post">Post</a></li>
-      { Meteor.userId() ? <li><a href="/dashboard">Dashboard</a></li>:""}
-      <li><a href="/about">About Us</a></li>
+      <li><a href="/">{this.state.lang ?'Home':'Ahabanza'}</a></li>
+      <li><a href="/recruit">{this.state.lang?'Recruit':'Tanga akazi'}</a></li>
+      <li><a href="/post">{this.state.lang ?'Post':'Tangaza'}</a></li>
+      { Meteor.userId() ? <li><a href="/dashboard">{this.state.lang? 'Dashboard':'Konte'}</a></li>:""}
+      <li><a href="/about">{this.state.lang ?'About Us':'Abo tuti bo'}</a></li>
     </ul>
     <ul className="nav navbar-nav navbar-right">
       <li><a><AccountsUIWrapper /></a></li>
-      <li><a href="/help">Help</a></li>
-      <li><a href="#">Eng/Kiny</a></li>
+      <li><a href="/help">{this.state.lang ? 'Help':'Ubufasha'}</a></li>
+      <li><a onClick={this.changeLang.bind(this)} className="label blue-gradient btn-rounded" style={{backgroundColor:'#3f51b5'}}>Eng/Kiny</a></li>
     </ul>
     </div>
   </div>

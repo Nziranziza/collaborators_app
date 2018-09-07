@@ -166,7 +166,7 @@ export default class FamilyInfo extends TrackerReact(React.Component) {
         <div id="page-wrapper">
                 <div className="row">
                     <div className="col-lg-12">
-                        <h1 className="page-header">Family Information<button className="btn blue-gradient btn-rounded" type="button" onClick={this.enableEditFamilyInfo.bind(this)} style={{marginLeft:"548px"}}>{buttonName}</button></h1>
+                        <h1 className="page-header">Family Information<button className="btn blue-gradient btn-rounded" type="button" onClick={this.enableEditFamilyInfo.bind(this)} style={{float:'right'}}>{buttonName}</button></h1>
                     </div>
                 </div>
               { this.state.edit ? <HandleFamilyInfo/>:

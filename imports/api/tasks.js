@@ -7,7 +7,8 @@ export const Contactinfo=new Mongo.Collection('contactinfo');
 export const Educationinfo=new Mongo.Collection('educationinfo');
 export const Biography=new Mongo.Collection('biography');
 export const Languages=new Mongo.Collection('languages');
-//Publishing the collection
+export const Comment=new Mongo.Collection('comment');
+
 if (Meteor.isServer) {
     // This code only runs on the server
     Meteor.publish('userdata', function userdataPublication() {
@@ -35,20 +36,31 @@ Meteor.publish('biography',function biographyPublication(){
 Meteor.publish('languages',function languegesPublication(){
     return Languages.find({id:this.userId});
 });
+Meteor.publish('comment',function commentPublication(){
+    return Comment.find();
+});
+Meteor.publish('users',function usersPublication(){
+    return db.users.find();
+})
 
 }  
 
 //adding methods to handle insecure 
 Meteor.methods({
     //adding a new Job Post
-    addJobPost(job,title){ 
-    Userdata.insert({Jobdata:
+    addJobPost(job,title,cat,exp,vac){ 
+    Userdata.insert(
                {post: job,
                 createdAt: new Date(),
                 published: false,
                 user: Meteor.user().username,
-                title:title
-            }}
+                id:Meteor.userId(),
+                title:title,
+                cat:cat,
+                exp:exp,
+                vac:vac
+
+            }
         
     );
     },
@@ -57,11 +69,19 @@ Meteor.methods({
       Userdata.remove(id);
     },
     //Publishing a Job Post
-    publishJobPost(id,status){
+    publishJobPost(id,job,title,cat,exp,vac,status){
       Userdata.update(id,{
-          $set:{Jobdata:{
-              publish:!status
-          }
+          $set:{
+            post: job,
+            createdAt: new Date(),
+            published: !status,
+            user: Meteor.user().username,
+            id:Meteor.userId(),
+            title:title,
+            cat:cat,
+            exp:exp,
+            vac:vac
+          
         }
       });
     },
@@ -254,7 +274,22 @@ addNative(native){
         id:Meteor.userId()
 
     })
+},
+//Add Comment
+addComment(comment,postId){
+    Comment.insert({
+        comment:comment,
+        postId:postId,
+        user:Meteor.user().username,
+        createdAt:new Date,
+    })
+},
+//Delete Comment
+deleteComment(id){
+    Comment.remove(id)
 }
+
+
 
 });
 
