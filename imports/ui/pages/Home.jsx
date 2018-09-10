@@ -89,7 +89,7 @@ Meteor.userId() ?  < Homepage />:
   <p className="ins-affiliation">IT Technicians and Programmer</p>
 </div>
 <div>
-<p className="h5 text-center mb-4" ><a href="/recruit">Click for more Job Announcements</a></p>
+<p className="h5 text-center mb-4" ><a href="/post">Click for more Job Announcements</a></p>
 </div>
 
   </div>

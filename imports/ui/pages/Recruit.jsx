@@ -1,23 +1,20 @@
 import React from 'react';
 import TrackerReact from 'meteor/ultimatejs:tracker-react';
 import { Meteor } from 'meteor/meteor';
+import {Person} from '../../api/tasks.js';
 
 function PersonImage(props){
   return(
-  <div className="card" >
-          <img
-            className="card-img-top"
-            src={props.url}
-            alt="Card image"
-            />
-          <div className="card-body">
-            <h4 className="card-title">{props.name}</h4>
-            <p className="card-text"> {props.name} is an {props.industry}</p>
-            <a href={props.profile} className="btn btn-primary">
-              See Profile
-            </a>
-          </div>
-      </div>
+         
+         <div className="col-md-3 col-sm-6 col-xs-12" className="card" >
+                            <div className="service-item text-center" >
+                                <i className="fa fa-pencil"><img src={props.url} width="150" height="150"/></i>
+                                <h5><b>{props.name}</b></h5>
+                                <div className="separator2"></div>
+                                <h5>{props.name} is an architect and an engineer</h5>
+                                <a href={props.link} className="btn btn-primary">See Profile</a>
+                            </div>
+          </div> 
   );
 }
 
@@ -28,7 +25,7 @@ export default class Recruit extends TrackerReact(React.Component){
       show:false,
       showe:false,
       subscription:{
-        users:Meteor.subscribe('users'),
+        person:Meteor.subscribe('person')
       }
     }
   }
@@ -44,80 +41,40 @@ export default class Recruit extends TrackerReact(React.Component){
       showe:!this.state.showe
     })
   }
+  componentWillUnmount(){
+    this.state.subscription.person.stop();
+  }
   render(){
     return (
       <div className='container'>
         <p className="h1 text-center mb-4" style={{paddingBottom:'10px'}}>Strong Team Successful Business</p>
-        <p className="h4 text-center mb-4">We have a lot of workers you can recruit for your organisation and for part time job. 
+        <p className="h4 text-center mb-4" className="jumbotron">We have a lot of workers you can recruit for your organisation and for part time job. 
           Browse through them or let do them matching to save your time</p>
-      <div>
+          <section className="jumbotron">
       <div className="row">
-      <div className="col-sm-3" >
-         <img className="card-img-top img-fluid" src="http://gsl.mit.edu/media/cache/90/37/90374362e74050b208565056391c9d80.jpg" alt="Card image"  />
-         <div className="card-body">
-         <h4 className="card-title">Jennah Haque</h4>
-         <p className="card-text">Jennah Haque is an architect and engineer</p>
-         <a href="/recruit/profile1" className="btn btn-primary">See Profile</a>
-      </div>
-    </div>
-
-    <div className="col-sm-3">
-         <img className="card-img-top img-fluid" src="http://gsl.mit.edu/media/cache/01/e6/01e6341b617cc5e083aaa5d25c3b145c.jpg" alt="Card image"  />
-         <div className="card-body">
-         <h4 className="card-title">Schadrack</h4>
-         <p className="card-text">Ngirimana Schadrack is an architect </p>
-         <a href="http://gsl.mit.edu/accounts/1797/" className="btn btn-primary">See Profile</a>
-      </div>
-    </div>
-
-    <div className="col-sm-3" >
-         <img className="card-img-top img-fluid" src="http://gsl.mit.edu/media/cache/74/65/746529893daccdd9989e58ec6aa06a1a.jpg" alt="Card image"  />
-         <div className="card-body">
-         <h4 className="card-title">Wataru Doita</h4>
-         <p className="card-text">Wataru Doita is an architect and engineer</p>
-         <a href="/recruit/profile2" className="btn btn-primary">See Profile</a>
-      </div>
-    </div>
-
-    <div className="col-sm-3" >
-         <img className="card-img-top img-fluid" src="http://gsl.mit.edu/media/cache/0a/c5/0ac516d1c080e04c54df44b4dbf2a0ec.jpg" alt="Card image"  />
-         <div className="card-body">
-         <h4 className="card-title">Tosin Bosede</h4>
-         <p className="card-text">Tosin Bosede is an architect and engineer</p>
-         <a href="/recruit/profile4" className="btn btn-primary">See Profile</a>
-      </div>
-    </div>
-    </div>
-    <div className="card">
-         <img className="card-img-top" src="http://gsl.mit.edu/media/cache/bf/df/bfdf935af023fa8981dd86ef67dccbb6.jpg" alt="Card image"  />
-         <div className="card-body">
-         <h4 className="card-title">Jim Musika Ntare</h4>
-         <p className="card-text">Jim Musika Ntare is an architect and engineer</p>
-         <a href="http://gsl.mit.edu/accounts/1800/" className="btn btn-primary">See Profile</a>
-      </div>
-    </div>
-    <div className="card">
-         <img className="card-img-top" src="http://gsl.mit.edu/media/cache/0e/32/0e322a9132cf411154cb1b3f2cf86bc6.jpg" alt="Card image"  />
-         <div className="card-body">
-         <h4 className="card-title">Germaine</h4>
-         <p className="card-text">Umutoni is an architect and engineer</p>
-         <a href="http://gsl.mit.edu/accounts/1898/" className="btn btn-primary">See Profile</a>
-      </div>
-    </div>
-    <div className="card">
-         <img className="card-img-top" src="http://gsl.mit.edu/media/cache/ad/60/ad601ef4c339e00331256cf1e184020f.jpg" alt="Card image"  />
-         <div className="card-body">
-         <h4 className="card-title">Josiane Jojo</h4>
-         <p className="card-text">Jojo is an architect and engineer</p>
-         <a href="http://gsl.mit.edu/accounts/1804/" className="btn btn-primary">See Profile</a>
-      </div>
-    </div>
+      <div className="wrapper">
+      
+        <PersonImage name="Jennah Haque" url="http://gsl.mit.edu/media/cache/90/37/90374362e74050b208565056391c9d80.jpg" link="/recruit/profile1"/>
+        <PersonImage name="Schadrack" link="http://gsl.mit.edu/accounts/1797/" url="http://gsl.mit.edu/media/cache/01/e6/01e6341b617cc5e083aaa5d25c3b145c.jpg"/>
+        <PersonImage name="Wataru Doita" link="/recruit/profile2" url="http://gsl.mit.edu/media/cache/74/65/746529893daccdd9989e58ec6aa06a1a.jpg" />
+        <PersonImage name="Tosin Bosede" link="/recruit/profile4" url="http://gsl.mit.edu/media/cache/0a/c5/0ac516d1c080e04c54df44b4dbf2a0ec.jpg"/>   
+       
     
+    <PersonImage name="Jim Musika Ntare" link="http://gsl.mit.edu/accounts/1800/" url="http://gsl.mit.edu/media/cache/bf/df/bfdf935af023fa8981dd86ef67dccbb6.jpg" />
+        
+    <PersonImage name="Germaine" url="http://gsl.mit.edu/media/cache/0e/32/0e322a9132cf411154cb1b3f2cf86bc6.jpg" link="http://gsl.mit.edu/accounts/1898/"/>
+         
+    <PersonImage name="Josiane Jojo" url="http://gsl.mit.edu/media/cache/ad/60/ad601ef4c339e00331256cf1e184020f.jpg" link="http://gsl.mit.edu/accounts/1804/"/>
+         
+    {Person.find().fetch().map((info)=>{return <PersonImage name={info.name} url="http://gsl.mit.edu/media/cache/ad/60/ad601ef4c339e00331256cf1e184020f.jpg"/> })}
     
    
     < PersonImage url={"http://gsl.mit.edu/media/cache/de/ac/deacf6c048530f2b57015729ff61ed04.jpg"} name={"Kosi Aroh"}
-    profile={"http://gsl.mit.edu/accounts/1755/"} industry={"a programmer"}/>
-
+    link={"http://gsl.mit.edu/accounts/1755/"} />
+  
+    </div>
+   </div>
+   </section>
     <p className="h3 text-center mb-4" style={{paddingBottom:'10px'}}>Select Workers by Categories</p>
     <button type="button" className="btn btn-raised btn-primary" onClick={this.changeShow.bind(this)}>Programmers</button>
     {this.state.show ?<div>
@@ -215,7 +172,7 @@ export default class Recruit extends TrackerReact(React.Component){
     <button type="button" className="btn btn-raised btn-info">Less than 1 Year Experience</button>
 
     </div>
-      </div>
+ 
     );
 
   }

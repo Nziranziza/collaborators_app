@@ -8,6 +8,7 @@ export const Educationinfo=new Mongo.Collection('educationinfo');
 export const Biography=new Mongo.Collection('biography');
 export const Languages=new Mongo.Collection('languages');
 export const Comment=new Mongo.Collection('comment');
+export const Person=new Mongo.Collection('person');
 
 if (Meteor.isServer) {
     // This code only runs on the server
@@ -39,8 +40,8 @@ Meteor.publish('languages',function languegesPublication(){
 Meteor.publish('comment',function commentPublication(){
     return Comment.find();
 });
-Meteor.publish('users',function usersPublication(){
-    return db.users.find();
+Meteor.publish('person',function personPublication(){
+    return Person.find();
 })
 
 }  
@@ -257,6 +258,14 @@ addBiography(text){
         id:Meteor.userId()
     })
 },
+editBiography(id,text){
+    Biography.update(id,{
+        $set:{
+            biotext:text,
+            id:Meteor.userId(),
+        }
+    })
+},
 //Add language
 addLanguage(lang,level){
     Languages.insert({
@@ -287,9 +296,18 @@ addComment(comment,postId){
 //Delete Comment
 deleteComment(id){
     Comment.remove(id)
+},
+//making yourself available (Dashboard)
+Available(name){
+    Person.insert({
+        name:name,
+        id:Meteor.userId()
+    })
+},
+//making yourself unavailable (Dashboard) 
+unAvailable(id){
+    Person.remove(id)
 }
-
-
 
 });
 

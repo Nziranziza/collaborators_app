@@ -50,9 +50,9 @@ comment(){
       <h5><span className="label label-danger">Job</span> <span className="label label-primary">{this.props.cat}</span></h5><br></br>
       <div>{this.props.posts}</div>
       {Meteor.userId() === this.props.userId ?
-      <div>
-      <button type="button" className="label btn-success" onClick={this.publishJobPost.bind(this)}>{this.props.publish ? "Unpublish":"Publish"}</button>
-      <button type="button" className="label btn-danger" onClick={this.deleteJobPost.bind(this)} >Delete</button>
+      <div style={{marginTop:'10px'}}>
+      <button type="button" className="label label-success" onClick={this.publishJobPost.bind(this)}>{this.props.publish ? "Unpublish":"Publish"}</button>
+      <button type="button" className="label label-danger" onClick={this.deleteJobPost.bind(this)} style={{marginLeft:'5px'}}>Delete</button>
       </div>:""}
     <br/>
       <p><span className="badge">{this.comment().length}</span> Comments:</p> <br></br>

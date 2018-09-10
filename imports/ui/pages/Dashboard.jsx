@@ -3,7 +3,8 @@ import DashboardNav from './dashboard/DashboardNav.jsx';
 import SignupLogin from './SignupLogin.jsx';
 import TrackerReact from 'meteor/ultimatejs:tracker-react';
 import {Biography} from '../../api/tasks.js';
-
+import {Personalinfo} from '../../api/tasks.js';
+import ReactDOM from 'react-dom';
 class DisplayBiography extends React.Component{
     render(){
         return(
@@ -21,20 +22,36 @@ export default class Dashboard extends TrackerReact(React.Component) {
        this.state={
            bio:false,
            subscription:{
-            Biography: Meteor.subscribe("biography")
+            Biography: Meteor.subscribe("biography"),
+            Person: Meteor.subscribe("person"),
+            personalInfo: Meteor.subscribe("personalInfo")
           }
        }
    }
    componentWillUnmount(){
-    this.state.subscription.biography.stop();
+    this.state.subscription.Biography.stop();
+    this.state.subscription.Person.stop();
+    this.state.subscription.personalInfo.stop();
   }
   Biography(){
     return Biography.find().fetch();
 }
-   addBiography(){
+   addBiography(e){
+       e.preventDefault();
        this.setState({
            bio:true,
        })
+       ReactDOM.findDOMNode(this.refs.bio).value=Biography.findOne().biotext;
+       console.log(Biography.findOne().biotext)
+   }
+   editBiography(e){
+       e.preventDefault();
+       var text=this.refs.bio.value;
+       Meteor.call('editBiography',Biography.findOne()._id,text);
+       alert("The data updated successful");
+       this.setState({
+        bio:false
+    })
    }
    saveBiography(e){
        e.preventDefault();
@@ -47,9 +64,17 @@ export default class Dashboard extends TrackerReact(React.Component) {
    }
    checkBio(){
        var biography= Biography.find().fetch().map((Info)=> {return Info});
-       return(biography ? true:false)
-        
+       return(biography.length ? true:false)    
    }
+
+changeAvailability(e){
+    e.preventDefault();
+    var person= Personalinfo.findOne();
+    Meteor.call('Available',person.fname);
+}
+person(){
+    return Person.findOne({id:Meteor.userId()});
+}
     render(){
     return (
         Meteor.userId() ?
@@ -98,7 +123,7 @@ export default class Dashboard extends TrackerReact(React.Component) {
                                         </div>
                                     </div>
                                 </div>
-                                <a href="/dashboard/available">
+                                <a onClick={this.changeAvailability.bind(this)}>
                                     <div className="panel-footer">
                                         <span className="pull-left">View Details</span>
                                         <span className="pull-right"><i className="fa fa-arrow-circle-right"></i></span>
@@ -181,12 +206,12 @@ export default class Dashboard extends TrackerReact(React.Component) {
                                 <div className="panel-body">
                                     <p><small>This section helps the recruiters to know more about you please describe yourself as the best as you can. Completing this section will increase your ratings and hence affecting your chances to get a job.</small></p>
                                     <div id="morris-area-chart">
-                                    <button type="button" className="btn btn-raised btn-primary" onClick={this.addBiography.bind(this)}>{this.checkBio()?'Edit':'Add Bio'}</button>
+                                    <button type="button" className="btn btn-raised btn-primary" onClick={ this.addBiography.bind(this)}>{this.checkBio()?'Edit':'Add Bio'}</button>
                                     {this.state.bio ? <div> <div class="form-group">
                                                                <label for="exampleTextarea" className="bmd-label-floating">Write your biography here</label>
                                                                <textarea className="form-control" ref='bio' rows="5"></textarea>
                                                             </div>
-                                                            <button type="button" className="btn btn-raised btn-primary" onClick={this.saveBiography.bind(this)}>Save</button>
+                                                            <button type="button" className="btn btn-raised btn-primary" onClick={this.checkBio()? this.editBiography.bind(this):this.saveBiography.bind(this)}>{this.checkBio? "Update":"Save"}</button>
                                                       </div>:
                                                       <div>{this.Biography().map((info)=>{return <DisplayBiography text={info.biotext} key={info._id}/>})}</div>}
                                     </div>

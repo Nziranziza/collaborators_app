@@ -16,6 +16,7 @@ constructor(){
     },
   loginDrop:true,
   displayed:'all',
+  postTitle:'RECENT POSTS'
 }
 }
 alreadyHaveAccount(e){
@@ -51,32 +52,38 @@ componentWillUnmount(){
 fullChange(e){
   e.preventDefault();
   this.setState({
-    displayed:'full'
+    displayed:'full',
+    postTitle:'FULL TIME JOBS'
   })
 }
 partChange(e){
   e.preventDefault();
   this.setState({
-   displayed:'part'
+   displayed:'part',
+   postTitle: 'PART TIME JOBS'
   })
 }
 myChange(e){
   e.preventDefault();
   this.setState({
-    displayed:'my'
+    displayed:'my',
+    postTitle:'MY JOB POSTS'
   })
 }
 //fetching posts from collection
   postings() {
-    if(this.state.displayed=='all')
-   return Userdata.find().fetch();
-   else if (this.state.displayed=='my')
-   return Userdata.find({id:Meteor.userId()}).fetch();
-   else if(this.state.displayed=='full')
-   return Userdata.find({cat:'Full Time'}).fetch();
-   else if(this.state.displayed=='part')
-   return Userdata.find({cat:'Part Time'}).fetch();
-  }
+    switch(this.state.displayed){
+      case 'all':
+      return Userdata.find().fetch();
+      case'my':
+      return Userdata.find({id:Meteor.userId()}).fetch();
+      case'full':
+      return Userdata.find({cat:'Full Time'}).fetch();
+      case 'part':
+      return Userdata.find({cat:'Part Time'}).fetch();
+    }
+    }
+  
 
   render(){ 
 
@@ -138,7 +145,7 @@ myChange(e){
         </div>
         </div>
       </form></div>:<p className="jumbotron">Want to post your own job please <a className="label label-primary" onClick={this.alreadyHaveAccount.bind(this)} style={{float:'right'}}>login</a></p>}
-      <h4><small>RECENT POSTS</small></h4>
+      <h4><small>{this.state.postTitle}</small></h4>
        <hr></hr>
         <div>{this.postings().map((posts)=>{ if(posts.id==Meteor.userId()) return <UserInfo publisher={posts.user} key= {posts._id} status={posts.publish} id={posts._id} userId={posts.id} posts={posts.post} createdAt={posts.createdAt.toString()} title={posts.title} cat={posts.cat} publish={posts.published} exp={posts.exp} vac={posts.vac}/> 
       else if(posts.published==true)
