@@ -133,7 +133,7 @@ export default class Recruit extends TrackerReact(React.Component){
          <div className="card-body">
          <h4 className="card-title">Safari Regis</h4>
          <p className="card-text">Safari Regis is an architect and engineer</p>
-         <a href="/recruit/profile" className="btn btn-primary">See Profile</a>
+         <a href="/recruit/profile" className="btn btn-raised btn-info">See Profile</a>
       </div>
     </div>
 
