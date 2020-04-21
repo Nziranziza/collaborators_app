@@ -38,10 +38,10 @@ Header a, #login-buttons a {
   width:45%;
   margin:10px;
 }
-.navbar-inverse{
-background-color:#303f9f;
-}
 
+.navbar.navbar-inverse {
+  background-color:#304D84;
+}
 h1{
   align-content: center;
 }
@@ -62,10 +62,6 @@ align-content: center,
  
   float: left;
 }
-
-
-
-
 
 
 body {
@@ -442,7 +438,7 @@ table.dataTable thead .sorting:after {
   border-left-width: 0;
 }
 .timeline-badge.primary {
-  background-color: #2e6da4 !important;
+  background-color: #304D84 !important;
 }
 .timeline-badge.success {
   background-color: #3f903f !important;
@@ -531,3 +527,103 @@ body{background-color:#f8f8f8}
   overflow-x: scroll;
 }
 .btn-info{width:200px}
+
+.search-input {
+  margin: 15px 0px;
+  width: 620px;
+}
+::placeholder { 
+  color: #304D84;
+  opacity: 1; 
+}
+
+:-ms-input-placeholder {
+  color: #304D84;
+}
+
+::-ms-input-placeholder {
+  color: #304D84;
+}
+
+a, a:hover, a:focus {
+  color: white;
+}
+
+.footer-copyright {
+  margin-top: 20px;
+}
+
+.featured-profile, .featured-job, .how-it-work {
+  margin: 5px;
+  text-align: center;
+  max-width: 150px;
+}
+.featured-profile img {
+  width: 100px;
+  border-radius: 100px;
+}
+.featured-job img, .how-it-work img {
+  width: 100px;
+  border-radius: 4px;
+}
+.featured-profile-section, .featured-job-section  {
+  display: flex;
+  height: 40vh;
+  align-items: center;
+}
+.featured-job-section {
+  background-color: white;
+}
+.featured-profile-section, .how-it-works-section {
+  background-color: #F8FAFD;
+}
+.welcome-section {
+  background-color: white;
+  background-image: url('background.png');
+  height: 55vh;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  color: white;
+}
+.welcome-section h2 {
+  color: white;
+}
+.welcome-section-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 55vh;
+}
+.welcome-section-container .welcome-section__right {
+  color: #304D84;
+  width: 30%;
+}
+.welcome-section__right h2 {
+  color: #304D84;
+}
+.welcome-section__right h2 {
+  text-align: center;
+}
+.featured-profile-container, .feature-job-container, .how-it-works-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+.btn {
+  background-color: #304D84;
+  color: white !important;
+  width: 100%;
+}
+.btn:hover {
+  color: #304D84 !important;
+}
+.input {
+  width: 100%;
+  padding: 6px;
+  border-color: #304D84;
+  border-radius: 4px;
+}
+h2 {
+  color: #304D84;
+}
