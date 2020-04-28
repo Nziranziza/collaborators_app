@@ -24,11 +24,7 @@ import Rankings from '../pages/dashboard/Rankings.jsx';
 import Trainings from '../pages/dashboard/Trainings.jsx';
 import Lessons from '../pages/dashboard/Lessons.jsx';
 import Available from '../pages/dashboard/Available.jsx';
-import Profile1 from '../pages/Profile1.jsx';
-import Profile2 from '../pages/Profile2.jsx';
-import Profile3 from '../pages/Profile3.jsx';
-import Profile4 from '../pages/Profile4.jsx';
-
+import Profile from '../pages/Profile.jsx';
 
 export default class MainLayout extends React.Component {
   render() {
@@ -42,10 +38,7 @@ export default class MainLayout extends React.Component {
               <Route exact path = '/help' component={Help} />
               <Route exact path = '/post' component={Post} />
               <Route exact path = '/recruit' component={Recruit} />
-              <Route exact path = '/recruit/profile1' component={Profile1} />
-              <Route exact path = '/recruit/profile2' component={Profile2} />
-              <Route exact path = '/recruit/profile3' component={Profile3} />
-              <Route exact path = '/recruit/profile4' component={Profile4} />
+              <Route exact path = '/profiles/:username' component={Profile} />
               <Route exact path = '/home' component={Homepage} />
               <Route exact path = '/dashboard' component={Dashboard} />
               <Route exact path='/dashboard/personalinfo' component={PersonalInfo} />

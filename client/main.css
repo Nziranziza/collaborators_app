@@ -546,7 +546,7 @@ body{background-color:#f8f8f8}
 }
 
 a, a:hover, a:focus {
-  color: white;
+  color: #333;
 }
 
 .footer-copyright {
@@ -624,6 +624,18 @@ a, a:hover, a:focus {
   border-color: #304D84;
   border-radius: 4px;
 }
-h2 {
+h2, .h1, h3 {
   color: #304D84;
+}
+
+footer a {
+  color: white;
+}
+
+footer {
+  margin-top: 50px;
+}
+.btn.btn-raised.btn-primary, .btn.btn-raised:not(.btn-link):hover.btn-primary,  .btn.btn-raised:not(.btn-link):focus.btn-primary  {
+  background-color: #304D84;
+  color: white !important;
 }
