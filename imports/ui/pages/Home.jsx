@@ -6,6 +6,7 @@ import TrackerReact from "meteor/ultimatejs:tracker-react";
 import users from "../../../__mocks__/user";
 import jobs from "../../../__mocks__/jobs";
 import howItWorks from "../../../__mocks__/howItWorks";
+import { Link } from 'react-router-dom'
 
 //form function
 class Homeform extends TrackerReact(React.Component) {
@@ -41,7 +42,9 @@ class Homeform extends TrackerReact(React.Component) {
               {users.map((user) => (
                 <div className="featured-profile">
                   <img src={user.imageUrl} />
+                  <Link to={`profiles/${user.userName}`}>
                   <h4>{user.name}</h4>
+                  </Link>
                   <h5>{user.occupation}</h5>
                 </div>
               ))}
